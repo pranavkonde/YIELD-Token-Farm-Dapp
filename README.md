@@ -6,6 +6,57 @@ A decentralized finance (DeFi) application built on the Rootstock (RSK) Testnet 
 
 ![Image](https://github.com/user-attachments/assets/45233878-8d04-4757-a41d-ee20b462e36d)
 
+
+## Quick Start
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/YIELD-Token-Farm-Dapp.git
+cd YIELD-Token-Farm-Dapp
+```
+
+2. Install dependencies:
+```bash
+npm ci
+```
+
+3. Set up environment variables:
+```bash
+cp .env.sample .env
+```
+Then edit `.env` file with your:
+- `PRIVATE_KEY`: Your wallet private key
+- `ROOTSTOCK_TESTNET_RPC`: Rootstock testnet RPC URL
+
+4. Deploy smart contracts:
+```bash
+npx hardhat run scripts/deploy.js --network rootstock_testnet
+```
+
+5. Start the frontend application:
+```bash
+cd frontend
+npm ci
+npm start
+```
+
+The application will be available at [http://localhost:3000](http://localhost:3000).
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```plaintext
+PRIVATE_KEY=your_wallet_private_key
+ROOTSTOCK_TESTNET_RPC=your_rootstock_testnet_rpc_url
+```
+
+## Project Structure
+
+- `contracts/`: Smart contract source files
+- `frontend/`: React frontend application
+- `scripts/`: Deployment and other utility scripts
+- `test/`: Smart contract test files
 ## 🌟 Features
 
 - **Token Management**
