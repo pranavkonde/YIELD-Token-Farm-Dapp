@@ -597,7 +597,7 @@ const App = () => {
                   method: 'wallet_addEthereumChain',
                   params: [{
                     chainId: '0x1F',
-                    chainName: 'RSK Testnet',
+                    chainName: 'Rootstock Testnet',
                     nativeCurrency: {
                       name: 'tRBTC',
                       symbol: 'tRBTC',
@@ -608,11 +608,11 @@ const App = () => {
                   }]
                 });
               } catch (addError) {
-                setError('Failed to add RSK Testnet to MetaMask');
+                setError('Failed to add Rootstock Testnet to MetaMask');
                 return;
               }
             } else {
-              setError('Failed to switch to RSK Testnet');
+              setError('Failed to switch to Rootstock Testnet');
               return;
             }
           }

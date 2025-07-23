@@ -5,6 +5,10 @@ if (!process.env.PRIVATE_KEY) {
   throw new Error("Please set your PRIVATE_KEY in a .env file");
 }
 
+if (!process.env.ROOTSTOCK_TESTNET_RPC) {
+  throw new Error("Please set your ROOTSTOCK_TESTNET_RPC in a .env file");
+}
+
 module.exports = {
   solidity: {
     version: "0.8.20",
@@ -16,26 +20,11 @@ module.exports = {
     }
   },
   networks: {
-    rskTestnet: {
-      url: "https://public-node.testnet.rsk.co",
+    rootstock_testnet: {
+      url: process.env.ROOTSTOCK_TESTNET_RPC || "https://public-node.testnet.rsk.co",
       chainId: 31,
       accounts: [process.env.PRIVATE_KEY],
-      gasPrice: 60000000, // 0.06 gwei
-      gasMultiplier: 1.25,
-    },
-    rskMainnet: {
-      url: "https://public-node.rsk.co",
-      chainId: 30,
-      accounts: [process.env.PRIVATE_KEY],
-      gasPrice: 60000000,
-      gasMultiplier: 1.25,
-    },
-    rootstockTestnet: {
-      url: "https://public-node.testnet.rsk.co",
-      chainId: 31,
-      accounts: [process.env.PRIVATE_KEY],
-      gasPrice: 60000000,
-      gasMultiplier: 1.25,
+      gasMultiplier: 1.25
     }
   }
 };
